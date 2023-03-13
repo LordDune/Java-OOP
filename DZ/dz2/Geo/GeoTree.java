@@ -16,7 +16,8 @@ public class GeoTree implements Printable{
 
     public void print(){
         for (Node i: this.getTree()){
-            System.out.println(i);
+            i.print();
         }
+        System.out.println();
     }
 }

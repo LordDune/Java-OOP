@@ -33,42 +33,13 @@ public class Main  {
         // print(gt, Gender.Male); // все люди мужского пола
         // print(gt, Gender.Female); // все люди женского пола
         
-        // реализация интерфейса Printable
+        //реализация интерфейса Printable
         gt.print(); // вывод информации о персонаже
         irina.print(); // вывод информации о древе
-
-        
+        new Result(gt, vasya, Relationship.husband).print(); // вывод информации об исследовании
+        new Result(gt, masha, SearchRe.grandParent).print(); // вывод информации об исследовании
+        new Result(gt, SearchAge.ageYounger, 40).print(); // вывод информации об исследовании
+        new Result(gt, Gender.Female).print(); // вывод информации об исследовании
     }
 
-    static void print(GeoTree tree, Person name, Relationship re){
-        System.out.printf("%s - %s по отношению к: ", name, re.toString());
-        System.out.println(new Research(tree).spend(name,re));
-    }
-
-    static void print(GeoTree tree, Person name, SearchRe re){
-        String st = "";
-        if (re == SearchRe.grandParent) {
-            if (name.getGender() == "Female") st = "GrandMother";
-            else if (name.getGender() == "Male") st = "GrandFather";
-            }
-        else if (re == SearchRe.grandChildren) {
-            if (name.getGender() == "Male") st = "GrandSon";
-            else if (name.getGender() == "Female") st = "GrandDaughter";
-        }
-        System.out.printf("%s - %s по отношению к: ", name, st);
-        System.out.println(new Research(tree).spend(name,re));
-    }
-
-    static void print(GeoTree tree, SearchAge se, int age){
-        String st = "";
-        if (se == SearchAge.ageYounger) st = "до";
-        else if (se == SearchAge.ageOlder) st = "от";
-        System.out.printf("Люди %s %d: ", st, age);
-        System.out.println(new Research(tree).spend(se, age));
-    }
-
-    static void print(GeoTree tree, Gender ge){
-        System.out.printf("Выводим всех %s: ", ge);
-        System.out.println(new Research(tree).spend(ge));
-    }
-}
+   }

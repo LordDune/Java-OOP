@@ -50,5 +50,6 @@ public class Person implements Printable{
 
     public void print(){
         System.out.println(this.toString());
+        System.out.println();
     }
 }
