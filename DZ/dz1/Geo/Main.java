@@ -1,4 +1,6 @@
-public class Main {
+
+
+public class Main  {
 
     public static void main(String[] args) {
         Person masha = new Person("Маша", 60, "Female");
@@ -9,28 +11,28 @@ public class Main {
         Person ivan = new Person("Ваня", 20, "Male");
         GeoTree gt = new GeoTree();
 
-        gt.append(masha, Relationship.parent, irina, Relationship.children);
-        gt.append(toma, Relationship.parent, vasya, Relationship.children);
-        gt.append(irina, Relationship.wife, vasya, Relationship.husband);
-        gt.append(irina, Relationship.parent, jane, Relationship.children);
-        gt.append(irina, Relationship.parent, ivan, Relationship.children);
+        // gt.append(masha, Relationship.parent, irina, Relationship.children);
+        // gt.append(toma, Relationship.parent, vasya, Relationship.children);
+        // gt.append(irina, Relationship.wife, vasya, Relationship.husband);
+        // gt.append(irina, Relationship.parent, jane, Relationship.children);
+        // gt.append(irina, Relationship.parent, ivan, Relationship.children);
 
-        System.out.println(irina); // вывод информации о персоне
-        irina.setGender("Female"); // задаем верный пол
-        System.out.println(irina); // вывод информации о персоне
+        // System.out.println(irina); // вывод информации о персоне
+        // irina.setGender("Female"); // задаем верный пол
+        // System.out.println(irina); // вывод информации о персоне
         
-        print(gt, vasya, Relationship.husband); // кому является вася мужем
-        print(gt, irina, Relationship.parent); // кому является ирина родителем
-        print(gt, masha, SearchRe.grandParent); // кому является ирина бабушкой
-        print(gt, masha, Relationship.parent); // кому является ирина родителем
-        print(gt, ivan, SearchRe.grandChildren); // кому является иван внуком
-        print(gt, jane, SearchRe.grandChildren); // кому является женя внучкой
-        print(gt, SearchAge.ageYounger, 40); // все люди до 40 лет
-        print(gt, SearchAge.ageOlder, 40); // все люди от 40 лет
-        print(gt, Gender.Male); // все люди мужского пола
-        print(gt, Gender.Female); // все люди женского пола
+        // print(gt, vasya, Relationship.husband); // кому является вася мужем
+        // print(gt, irina, Relationship.parent); // кому является ирина родителем
+        // print(gt, masha, SearchRe.grandParent); // кому является ирина бабушкой
+        // print(gt, masha, Relationship.parent); // кому является ирина родителем
+        // print(gt, ivan, SearchRe.grandChildren); // кому является иван внуком
+        // print(gt, jane, SearchRe.grandChildren); // кому является женя внучкой
+        // print(gt, SearchAge.ageYounger, 40); // все люди до 40 лет
+        // print(gt, SearchAge.ageOlder, 40); // все люди от 40 лет
+        // print(gt, Gender.Male); // все люди мужского пола
+        // print(gt, Gender.Female); // все люди женского пола
         
-        System.out.println(new Research(gt).spend(Gender.Female));
+        // System.out.println(new Research(gt).spend(Gender.Female));
 
         
     }

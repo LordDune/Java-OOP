@@ -1,13 +1,58 @@
-import java.util.HashSet;
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import Interface.Printable;
 
+enum p {
+    age,
+    gender
+}
+
 public class Result implements Printable{
+
+
     
-    HashSet<Person> result = new HashSet<>();
+    ArrayList<Person> result = new ArrayList<>();
+
+    public void sort(p format){
+        if (format == p.age) Collections.sort(this.result, new AgeComparator());
+        else if (format == p.gender) Collections.sort(this.result, new GenderComparator());
+    }
 
     public void print(){
         System.out.println(result);
+        System.out.println();
+    }
+
+    public void print(p format){
+        sort(format);
+        print();
+    }
+
+    public void printSave(String fileName){
+        print();
+        try (FileWriter fw = new FileWriter(fileName, false)) { // sfalse - создание и перезапись
+            for (Person i: result) fw.write(i + "\n");
+            
+        }
+        catch (IOException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public void printSave(p format){
+        sort(format);
+        printSave();
+    }
+
+    public void printSave(){
+        printSave("result.txt");
+    }
+
+    public void printSave(p format, String fileName){
+        sort(format);
+        printSave(fileName);
     }
 
     public Result(GeoTree tree, Person name, Relationship re) {
@@ -42,5 +87,9 @@ public class Result implements Printable{
         this.result = new Research(tree).spend(ge);
     }
 
+    public Result(GeoTree tree){
+        System.out.printf("Выводим всех членов семьи: ");
+        this.result = new Research(tree).spend(tree);
+    }
 
 }

@@ -1,3 +1,4 @@
+
 enum Gender {
     Male, Female
 }
@@ -5,7 +6,7 @@ enum Gender {
 public class Person {
     private String fullName;
     private int age;
-    private Gender gender; 
+    private Gender gender;
 
     public Person(String fullName, int age, String gender) {
         this.fullName = fullName;

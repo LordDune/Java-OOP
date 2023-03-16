@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashSet;
 
 enum SearchRe {
     grandParent,
@@ -12,7 +11,7 @@ enum SearchAge {
 }
 
 public class Research {
-    HashSet<Person> result = new HashSet<>();
+    ArrayList<Person> result = new ArrayList<>();
     ArrayList<Node> tree;
 
     public Research(GeoTree geoTree) {
@@ -25,16 +24,16 @@ public class Research {
         return names.toString();
     }
 
-    public HashSet<Person> spend(Person p, Relationship re) {
+    public ArrayList<Person> spend(Person p, Relationship re) {
         for (Node t : tree) {
-            if (t.p1.getFullName() == p.getFullName() && t.re == re) {
+            if (t.p1.getFullName() == p.getFullName() && t.re == re && !this.result.contains(t.p1)) {
                 result.add(t.p2);
             }
         }
         return result;
     }
 
-    public HashSet<Person> spend(Person p, SearchRe re){
+    public ArrayList<Person> spend(Person p, SearchRe re){
         Relationship reTemp = Relationship.parent;
         if (re == SearchRe.grandParent) reTemp = Relationship.parent;
         if (re == SearchRe.grandChildren) reTemp = Relationship.children;
@@ -44,18 +43,26 @@ public class Research {
         return result;
     }
 
-    public HashSet<Person> spend(SearchAge re, int ageRe){
+    public ArrayList<Person> spend(SearchAge re, int ageRe){
         for (Node t : tree) {
-            if (re == SearchAge.ageOlder) if (t.p1.getAge() >= ageRe) result.add(t.p1);
-            if (re == SearchAge.ageYounger) if (t.p1.getAge() <= ageRe) result.add(t.p1);
+            if (re == SearchAge.ageOlder) if (t.p1.getAge() >= ageRe && !this.result.contains(t.p1)) result.add(t.p1);
+            if (re == SearchAge.ageYounger) if (t.p1.getAge() <= ageRe && !this.result.contains(t.p1)) result.add(t.p1);
         }
             return result;
     }
 
-    public HashSet<Person> spend(Gender ge){
+    public ArrayList<Person> spend(Gender ge){
         for (Node t : tree) {
-            if (t.p1.getGender() == ge.toString()) result.add(t.p1);
+            if (t.p1.getGender() == ge.toString() && !this.result.contains(t.p1)) result.add(t.p1);
         }
             return result;
     }
+
+    public ArrayList<Person> spend(GeoTree ge){
+        for (Node t : tree) {
+            if (!this.result.contains(t.p1)) result.add(t.p1);
+        }
+            return result;
+    }
+
 }

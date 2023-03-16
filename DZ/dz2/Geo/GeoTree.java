@@ -20,4 +20,5 @@ public class GeoTree implements Printable{
         }
         System.out.println();
     }
+
 }

@@ -1,4 +1,4 @@
-package OOP.DZ.dz1.locker;
+package DZ.dz1.locker;
 
 public class Main {
 
