@@ -24,7 +24,7 @@ public class Task implements Comparable{
     
     @Override
     public String toString(){
-        return String.format("id-%d:\t%s\t%s", id, createTime, name);
+        return String.format("id-%d:\t\t%s\t\t%s\t", id, createTime, name);
     }
 
     @Override

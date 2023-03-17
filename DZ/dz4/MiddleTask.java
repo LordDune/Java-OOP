@@ -19,7 +19,7 @@ public class MiddleTask extends Task implements MidLow{
 
     @Override
     public String toString() {
-        return String.format("%s\tMIDDLE\t%s", super.toString(), deadLineTime);
+        return String.format("%s\tMIDDLE\t\t%s", super.toString(), deadLineTime);
     }
 
     // @Override

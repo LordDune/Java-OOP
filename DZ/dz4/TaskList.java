@@ -30,6 +30,7 @@ public class TaskList {
     }
 
     public void print(){
+        System.out.println("ID\t\tCreate\t\tCreator\t\tPriority\tDeadLine");
         for (Task i: list){
             System.out.println(i);
         }
