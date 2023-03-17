@@ -17,11 +17,12 @@ public class Main {
         list.addd("Sergey", w.nextInt(1000), 10);
         list.addd("Sergey");
         list.addd("Sergey");
-        System.out.println("До сортировки");
+        System.out.println("До сортировки\n");
         
         list.print();
         Collections.sort(list.getList());
-        System.out.println("После сортировки");
+        System.out.println();
+        System.out.println("После сортировки\n");
         list.print();
     }
 }

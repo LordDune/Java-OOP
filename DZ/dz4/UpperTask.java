@@ -8,7 +8,7 @@ public class UpperTask extends Task{
 
     @Override
     public String toString() {
-        return String.format("%s\tUPPER", super.toString());
+        return String.format("%s\tUPPER\t\tdo it NOW!", super.toString());
     }
 
     // @Override

@@ -16,7 +16,7 @@ public class LowerTask extends Task implements MidLow{
 
     @Override
     public String toString() {
-        return String.format("%s\t\t\t%s", super.toString(), deadLineTime);
+        return String.format("%s\tLower\t\t%s", super.toString(), deadLineTime); 
     }
 
     // @Override
