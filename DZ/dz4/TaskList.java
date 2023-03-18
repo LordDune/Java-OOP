@@ -15,13 +15,13 @@ public class TaskList {
         list.add(task);
     }
 
-    public void addd(String name, Integer deadLineTime, Integer hours){
-        MiddleTask task = new MiddleTask(name, deadLineTime, hours);
+    public void addd(String name, Integer y, Integer m, Integer d, Integer h){
+        MiddleTask task = new MiddleTask(name, y, m, d, h);
         list.add(task);
     }
 
-    public void addd(String name, Integer deadLineTime){
-        LowerTask task = new LowerTask(name, deadLineTime);
+    public void addd(String name, Integer y, Integer m, Integer d){
+        LowerTask task = new LowerTask(name, y, m, d);
         list.add(task);
     }
 
@@ -30,7 +30,7 @@ public class TaskList {
     }
 
     public void print(){
-        System.out.println("ID\t\tCreate\t\tCreator\t\tPriority\tDeadLine");
+        System.out.println("ID\t\tCreateDate\tCreateTime\tCreator\t\tPriority\tDeadLineDate\tDeadLineTime");
         for (Task i: list){
             System.out.println(i);
         }

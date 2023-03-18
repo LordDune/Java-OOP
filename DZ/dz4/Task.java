@@ -1,30 +1,36 @@
 package DZ.dz4;
 
-import java.util.Random;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
-public class Task implements Comparable{
+public abstract class Task implements Comparable{
 
-    private Integer createTime;
+    private LocalTime createTime;
+    private LocalDate createDate;
     private String name;
     private Integer id;
     private static Integer count = 0;
-    Random w = new Random();
     
 
     public Task(String name){
         this.id = ++count;
-        this.createTime = w.nextInt(1000); //нужно исправить на реальную дату и время
+        this.createDate = LocalDate.now(); 
+        this.createTime = LocalTime.now().plusHours(id); //чтобы время создания у всех была разное
         this.name = name;
     }
 
-    public Integer getCreateTime(){
-        return this.createTime;
+    public String getCreateTime(){
+        return this.createTime.format(DateTimeFormatter.ofPattern("hh:mm"));
     }
-    
+
+    public String getCreateDate(){
+        return this.createDate.toString();
+    }
     
     @Override
     public String toString(){
-        return String.format("id-%d:\t\t%s\t\t%s\t", id, createTime, name);
+        return String.format("id-%d:\t\t%s\t%s\t\t%s\t", id, createDate, this.getCreateTime(), name);
     }
 
     @Override

@@ -2,5 +2,5 @@ package DZ.dz4;
 
 public interface MidLow {
     
-    public Integer getDeadLineTime();
+    public String getDeadLineDate();
 }

@@ -1,22 +1,28 @@
 package DZ.dz4;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class LowerTask extends Task implements MidLow{
     
-    Integer deadLineTime;
+    LocalDate deadLineDate;
+    LocalTime deadLineTime;
 
 
-    public LowerTask(String name, Integer deadLineTime){
+    public LowerTask(String name, Integer y, Integer m, Integer d){
         super(name);
-        this.deadLineTime = deadLineTime; // переделать в конвертацию реального типа date
+        this.deadLineDate = LocalDate.of(y, m, d);
+        this.deadLineTime = LocalTime.of(13,00);
     }
 
-    public Integer getDeadLineTime(){
-        return this.deadLineTime;
+
+    public String getDeadLineDate(){
+        return this.deadLineDate.toString();
     }
 
     @Override
     public String toString() {
-        return String.format("%s\tLower\t\t%s", super.toString(), deadLineTime); 
+        return String.format("%s\tLower\t\t%s\t%s", super.toString(), deadLineDate, deadLineTime); 
     }
 
     // @Override
