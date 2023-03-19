@@ -12,6 +12,7 @@ public class Main {
         list.add("Sergey", "15.12.2023", 15); // создание задачи среднего приоритета - указываем дату и час выполнения
         list.add("Sergey", "15.10.2023", 12);
         list.add("Sergey", "13.10.2023");
+        list.add("Sergey", "13.10.2023");
         list.add("Sergey"); // создание задачи наивысшего приоритета - указываем только имя, задача должна быть выполнена немедленно
         list.add("Sergey"); 
         System.out.println("До сортировки. Выводятся в порядке записи\n");
@@ -28,6 +29,10 @@ public class Main {
         list.showCompleted(); // вывод списка выполненных задач
         
         d.readCSVFile(); // вывод перечня из файла
+        
+        boolean q = list.getid(4).equals(list.getid(5)); // сравнение задач
+        System.out.println(q);
+        
 
  
     }

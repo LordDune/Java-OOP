@@ -96,4 +96,14 @@ public abstract class Task implements Comparable, Iterator<String>{
         }
     }
 
+    @Override
+    public boolean equals(Object o){
+        if ((this.priority == ((Task)o).getPriority()) && 
+        (this.name.equals(((Task)o).name)) &&
+        (this.deadLineDateTime.equals(((Task)o).getDead())) &&
+        (this.deadLineDateTime != null))
+        return true;
+        else return false;
+    }
+
 }

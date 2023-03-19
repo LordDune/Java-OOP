@@ -65,4 +65,14 @@ public class TaskList {
         }
         System.out.println();
     }
+
+    public Task getid(int id){
+        for (Task task: this.getActual()){
+            if (task.id == id) return task;}
+        for (Task task1: this.getCompleted()){
+            if (task1.id == id) return task1;}
+        return null;
+        }
 }
+
+
