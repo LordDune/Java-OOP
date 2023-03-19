@@ -7,23 +7,23 @@ public class Main {
     public static void main(String[] args) {
         
         TaskList list = new TaskList();   
-        list.add("Sergey", "15.12.2023");
-        list.add("Sergey", "15.12.2023", 15);
+        list.add("Sergey", "15.12.2023"); // создание задачи нисшего приоритета - указываем дату
+        list.add("Sergey", "15.12.2023", 15); // создание задачи среднего приоритета - указываем дату и время
         list.add("Sergey", "15.10.2023", 12);
         list.add("Sergey", "13.10.2023");
-        list.add("Sergey");
-        list.add("Sergey");
+        list.add("Sergey"); // создание задачи наивысшего приоритета - указываем только имя
+        list.add("Sergey"); 
         System.out.println("До сортировки\n");
         list.showTask();
         Collections.sort(list.getActual());
         System.out.println();
-        list.del(1);
         System.out.println("После сортировки\n");
         list.showTask();
-        list.showCompleted();
+        list.del(1);
         list.del(5);
-        list.showCompleted();
         list.showTask();
+        list.showCompleted();
+
         
         // LocalDate date = LocalDate.of(2023,5,12);
         // date.plusDays(5);
