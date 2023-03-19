@@ -1,15 +1,5 @@
 package DZ.dz4;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
-import java.util.GregorianCalendar;
-import java.util.Random;
-import java.util.concurrent.CountDownLatch;
-
-import javax.annotation.processing.SupportedOptions;
 
 
 public class Main {
@@ -17,23 +7,24 @@ public class Main {
     public static void main(String[] args) {
         
         TaskList list = new TaskList();
-        Random w = new Random();
 
-        list.addd("Sergey", 2023, 04, 15, 12);
-        list.addd("Sergey", 2023, 04, 15);
-        list.addd("Sergey", 2023, 04, 15, 15);
-        list.addd("Sergey",  2023, 05, 15);
+        // MiddleTask task2 = new MiddleTask("Sergey", "15.02.2023 16:00");
+        // LowerTask task1 = new LowerTask("Sergey", "15.02.2023 15:00");
+        
+        list.addd("Sergey", "15.12.2023");
+        list.addd("Sergey", "15.12.2023", 15);
+        list.addd("Sergey", "15.10.2023", 12);
+        list.addd("Sergey", "13.10.2023");
         list.addd("Sergey");
         list.addd("Sergey");
         System.out.println("До сортировки\n");
         
         list.print();
-        // Collections.sort(list.getList());
-        // System.out.println();
-        // System.out.println("После сортировки\n");
-        // list.print();
-        // Calendar calendar = new GregorianCalendar(2023,03,18);
-        // System.out.println(calendar.getTime());
+        Collections.sort(list.getList());
+        System.out.println();
+        System.out.println("После сортировки\n");
+        list.print();
+        
         // LocalDate date = LocalDate.of(2023,5,12);
         // date.plusDays(5);
         // System.out.println(date.plusDays(5));

@@ -1,35 +1,26 @@
 package DZ.dz4;
+import java.time.LocalDateTime;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+public class LowerTask extends Task{
 
-public class LowerTask extends Task implements MidLow{
-    
-    LocalDate deadLineDate;
-    LocalTime deadLineTime;
-
-
-    public LowerTask(String name, Integer y, Integer m, Integer d){
+    public LowerTask(String name, String deadLine){
         super(name);
-        this.deadLineDate = LocalDate.of(y, m, d);
-        this.deadLineTime = LocalTime.of(13,00);
+        priority = 1;
+        this.deadLineDateTime = LocalDateTime.parse(deadLine+" 23:59", formatterDateTime);
     }
 
-
-    public String getDeadLineDate(){
-        return this.deadLineDate.toString();
+    public String getDeadString(){
+        return this.deadLineDateTime.format(formatterDate);
     }
 
     @Override
     public String toString() {
-        return String.format("%s\tLower\t\t%s\t%s", super.toString(), deadLineDate, deadLineTime); 
+        return String.format("%s\t\tLower\t\t%s", super.toString(), getDeadString());
     }
 
-    // @Override
-    // public int compareTo(Object o) {
-    //     if (this.getClass() == o.getClass()){
-    //         return this.deadLineTime.compareTo(((MiddleTask)o).getDeadLineTime());
-    //     }
-    //     else return 1;
-    //     }
+    @Override
+    public int compareTo(Object o) {
+        if ((this.priority == (((Task) o).getPriority()))) return (this.deadLineDateTime.compareTo(((LowerTask)o).getDead()));
+        else return super.compareTo(o);
+        }
 }
