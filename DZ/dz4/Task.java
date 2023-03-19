@@ -7,6 +7,7 @@ public abstract class Task implements Comparable{
 
     protected LocalDateTime createDateTime;
     protected LocalDateTime deadLineDateTime;
+    protected LocalDateTime completedDateTime;
     protected String name;
     protected Integer id = ++count;
     protected static Integer count = 0;
@@ -33,6 +34,14 @@ public abstract class Task implements Comparable{
 
     public LocalDateTime getDead(){
         return deadLineDateTime;
+    }
+
+    public void SetCompletedDateTime(LocalDateTime dateTime){
+        this.completedDateTime = dateTime;
+    }
+
+    public String getCompletedDateTime(){
+        return this.completedDateTime.format(formatterDateTime);
     }
 
     public Integer getPriority(){

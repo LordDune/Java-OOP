@@ -6,24 +6,24 @@ public class Main {
 
     public static void main(String[] args) {
         
-        TaskList list = new TaskList();
-
-        // MiddleTask task2 = new MiddleTask("Sergey", "15.02.2023 16:00");
-        // LowerTask task1 = new LowerTask("Sergey", "15.02.2023 15:00");
-        
-        list.addd("Sergey", "15.12.2023");
-        list.addd("Sergey", "15.12.2023", 15);
-        list.addd("Sergey", "15.10.2023", 12);
-        list.addd("Sergey", "13.10.2023");
-        list.addd("Sergey");
-        list.addd("Sergey");
+        TaskList list = new TaskList();   
+        list.add("Sergey", "15.12.2023");
+        list.add("Sergey", "15.12.2023", 15);
+        list.add("Sergey", "15.10.2023", 12);
+        list.add("Sergey", "13.10.2023");
+        list.add("Sergey");
+        list.add("Sergey");
         System.out.println("До сортировки\n");
-        
-        list.print();
-        Collections.sort(list.getList());
+        list.showTask();
+        Collections.sort(list.getActual());
         System.out.println();
+        list.del(1);
         System.out.println("После сортировки\n");
-        list.print();
+        list.showTask();
+        list.showCompleted();
+        list.del(5);
+        list.showCompleted();
+        list.showTask();
         
         // LocalDate date = LocalDate.of(2023,5,12);
         // date.plusDays(5);
