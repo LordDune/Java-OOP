@@ -5,7 +5,7 @@ public class LowerTask extends Task{
 
     public LowerTask(String name, String deadLine){
         super(name);
-        priority = 1;
+        priority = 3;
         this.deadLineDateTime = LocalDateTime.parse(deadLine+" 23:59", formatterDateTime);
     }
 

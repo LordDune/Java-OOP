@@ -4,12 +4,12 @@ public class UpperTask extends Task{
     
     UpperTask(String name){
        super(name); 
-       priority = 3;
+       priority = 1;
     }
 
     @Override
     public String toString() {
-        return String.format("%s\t\tUPPER\t\tdo it NOW!", super.toString());
+        return String.format("%s\t\tUPPER\t\tdo it NOW!\t", super.toString());
     }
 
     @Override

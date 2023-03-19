@@ -44,9 +44,13 @@ public class TaskList {
         return this.actual;
     }
 
+    public ArrayList<Task> getCompleted(){
+        return this.completed;
+    }
+
     public void showTask(){
         System.out.println("Перечень актуальных задач");
-        System.out.println("ID\t\tCreate Date and Time\tCreator\t\tPriority\tDeadLine");
+        System.out.println("ID\tCreate Date and Time\tCreator\t\tPriority\tDeadLine");
         for (Task i: actual){
             System.out.println(i);
         }
@@ -55,9 +59,9 @@ public class TaskList {
 
     public void showCompleted(){
         System.out.println("Перечень выполненных задач");
-        System.out.println("ID\t\tCreate Date and Time\tCreator\t\tPriority\tDeadLine\t\tCompleted Date and Time");
+        System.out.println("ID\tCreate Date and Time\tCreator\t\tPriority\tDeadLine\t\tCompleted Date and Time");
         for (Task i: completed){
-            System.out.println(String.format("%s\t\t%s", i, i.getCompletedDateTime()));
+            System.out.println(String.format("%s\t%s", i, i.getCompletedDateTime()));
         }
         System.out.println();
     }
