@@ -40,7 +40,6 @@ public class Menu{
                         System.out.println(String.format("%s %s %s = %s\n", two, op.toString(), two, resultComplex));
                         }
                         else System.out.println("Неверный ввод");
-                        log.info("Some message");
                         break;
                     default:
                         isStart = false;
