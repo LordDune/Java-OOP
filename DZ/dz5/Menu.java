@@ -23,7 +23,7 @@ public class Menu{
                         if ("+-*/".contains(op)){
                             Double b = view.getValue("Введите второе число: ");
                         String result = nf.format(new CalcRealNumbers().operation(op, a, b));
-                        System.out.println(String.format("%s %s %s = %s\n", nf.format(a), op.toString(), nf.format(b), result));
+                        System.out.println(String.format("%s %s %s = %s\n", nf.format(a), op, nf.format(b), result));
                         }
                         else System.out.println("Неверный ввод");
                         break;
@@ -37,7 +37,7 @@ public class Menu{
                         Double twoB = view.getValue("Введите минмую часть второго числа: ");
                         ComplexNumber two = new ComplexNumber(twoA, twoB);
                         ComplexNumber resultComplex = new CalcComplexNumbers().operation(op, one, two);
-                        System.out.println(String.format("%s %s %s = %s\n", one, op.toString(), two, resultComplex));
+                        System.out.println(String.format("%s %s %s = %s\n", one, op, two, resultComplex));
                         }
                         else System.out.println("Неверный ввод");
                         break;
