@@ -37,7 +37,7 @@ public class Menu{
                         Double twoB = view.getValue("Введите минмую часть второго числа: ");
                         ComplexNumber two = new ComplexNumber(twoA, twoB);
                         ComplexNumber resultComplex = new CalcComplexNumbers().operation(op, one, two);
-                        System.out.println(String.format("%s %s %s = %s\n", two, op.toString(), two, resultComplex));
+                        System.out.println(String.format("%s %s %s = %s\n", one, op.toString(), two, resultComplex));
                         }
                         else System.out.println("Неверный ввод");
                         break;
