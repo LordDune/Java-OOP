@@ -1,10 +1,20 @@
 package DZ.dz5;
 
-public interface Model<E> {
-    public E result();
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
-    void setX(E value);
+public abstract class Model<T> {
+    
+    NumberFormat nf = new DecimalFormat("#.############");
+    
+    T one;
+    T two;
+    T result;
+    String op;
+    Scan scan = new Scan();
 
-    void setY(E value);
-
+    public String setOp(){
+        this.op = scan.getOp();
+        return op;
+    }
 }

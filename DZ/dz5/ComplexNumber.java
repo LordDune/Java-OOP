@@ -24,6 +24,7 @@ public class ComplexNumber{
 
     public String printA(){
         if (a != 0) return String.format("%s", nf.format(a).toString());
+        else if (a == 0 && b == 0) return "0";
         else return "";
     }
 

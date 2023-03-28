@@ -13,4 +13,11 @@ public class Scan {
         System.out.printf("%s", title);
         return in.next();
     }
+
+    public String getOp() {
+        System.out.printf("Введите операцию: ");
+        return in.next();
+    }
+
+
 }

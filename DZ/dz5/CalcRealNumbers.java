@@ -1,7 +1,11 @@
 package DZ.dz5;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class CalcRealNumbers implements CalcInterface<Double> {
 
+    NumberFormat nf = new DecimalFormat("#.############");
 
     public Double sum(Double a, Double b) {
         return a + b;
